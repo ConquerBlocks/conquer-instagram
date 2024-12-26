@@ -1,0 +1,24 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Bienvenido a nuestro InstaConquer{% endblock %}
+
+{% block page_content %}
+<div class="container">
+  {% include '_includes/_messages.html' %}
+
+  <h1>Homepage</h1>
+  <p>¡Bienvenido a InstaConquer!</p>
+
+  <section>
+    <h2>Últimas publicaciones</h2>
+
+    <div class="row">
+      {% for post in last_posts %}
+        <div class="col-12 col-sm-6 col-md-4">
+          {% include '_includes/posts/_post.html' %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}
